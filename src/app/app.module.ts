@@ -13,6 +13,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAarKTgvQj2eMH7YnxO0yRaIIouF0eR5ls',
@@ -34,7 +35,8 @@ const firebaseConfig = {
     ForgotPasswordComponent,
     HomeComponent,
     RegisterComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
