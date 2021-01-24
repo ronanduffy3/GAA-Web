@@ -48,7 +48,6 @@ export class AuthService {
         /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */
         this.SendVerificationMail();
-        this.SetUserData(result.user);
       }).catch((error) => {
         window.alert(error.message);
       });
@@ -68,8 +67,8 @@ export class AuthService {
     .then(() => {
       window.alert('Password reset email sent, check your inbox.');
     }).catch((error) => {
-      window.alert(error)
-    })
+      window.alert(error);
+    });
   }
 
   // Returns true when user is looged in and email is verified
@@ -85,19 +84,19 @@ export class AuthService {
     return this.afAuth.signInWithPopup(provider)
     .then((result) => {
        this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+        this.SetUserData(result.user);
         });
-       this.SetUserData(result.user);
+        this.router.navigate(['dashboard']);
     }).catch((error) => {
       window.alert(error);
     });
   }
 
-  /* Setting up user data when sign in with username/password, 
+  /* Setting up user data when sign in with username/password,
   sign up with username/password and sign in with social auth  
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
   SetUserData(user) {
-    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`Users/${user.uid}`);
     const userData: User = {
       uid: user.uid,
       email: user.email,
@@ -107,8 +106,15 @@ export class AuthService {
     }
     return userRef.set(userData, {
       merge: true
-    })
+    });
   }
+
+async UpdateProfile(changedDisplayName: string) {
+    const profile = {
+        displayName: changedDisplayName
+    }
+    return (await this.afAuth.currentUser).updateProfile(profile);
+}
 
   // Sign out
   SignOut() {

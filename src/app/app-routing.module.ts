@@ -9,7 +9,6 @@ import { DashboardComponent } from '../app/components/dashboard/dashboard.compon
 import { ForgotPasswordComponent } from '../app/components/forgot-password/forgot-password.component';
 import { HomeComponent } from '../app/components/home/home.component';
 import { SendVerificationEmailComponent } from '../app/components/send-verification-email/send-verification-email.component';
-import { ProfileComponent } from '../app/components/profile/profile.component';
 
 
 const routes: Routes = [
@@ -20,7 +19,7 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'send-verification-email', component: SendVerificationEmailComponent},
-  {path: 'profile', component: ProfileComponent}
+
 ];
 
 @NgModule({
