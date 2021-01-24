@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -15,6 +16,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SendVerificationEmailComponent } from './components/send-verification-email/send-verification-email.component';
 import { AuthService } from './shared/services/auth.service';
+import { CreateNewsComponent } from './components/create-news/create-news.component';
+
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAarKTgvQj2eMH7YnxO0yRaIIouF0eR5ls',
@@ -38,12 +41,15 @@ const firebaseConfig = {
     HeaderComponent,
     FooterComponent,
     SendVerificationEmailComponent,
+    CreateNewsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
