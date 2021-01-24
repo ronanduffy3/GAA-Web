@@ -41,12 +41,11 @@ export class AuthService {
         window.alert(error.message)
       })
   }
-
   // Sign up with email/password
   SignUp(email, password) {
     return this.afAuth.createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        /* Call the SendVerificaitonMail() function when new user sign 
+        /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */
         this.SendVerificationMail();
         this.SetUserData(result.user);
@@ -60,7 +59,7 @@ export class AuthService {
     (await this.afAuth.currentUser).sendEmailVerification().then(() => {
       console.log('Email Sent');
       this.router.navigate(['send-verification-email']);
-    }) ;
+    });
   }
 
   // Reset Forggot password
@@ -97,7 +96,6 @@ export class AuthService {
   /* Setting up user data when sign in with username/password, 
   sign up with username/password and sign in with social auth  
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-  
   SetUserData(user) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
     const userData: User = {

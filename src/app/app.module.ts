@@ -16,6 +16,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SendVerificationEmailComponent } from './components/send-verification-email/send-verification-email.component';
 import { AuthService } from './shared/services/auth.service';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAarKTgvQj2eMH7YnxO0yRaIIouF0eR5ls',
@@ -39,7 +40,8 @@ const firebaseConfig = {
     RegisterComponent,
     HeaderComponent,
     FooterComponent,
-    SendVerificationEmailComponent
+    SendVerificationEmailComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
