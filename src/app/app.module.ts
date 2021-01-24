@@ -14,6 +14,8 @@ import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SendVerificationEmailComponent } from './components/send-verification-email/send-verification-email.component';
+import { AuthService } from './shared/services/auth.service';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAarKTgvQj2eMH7YnxO0yRaIIouF0eR5ls',
@@ -36,7 +38,8 @@ const firebaseConfig = {
     HomeComponent,
     RegisterComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SendVerificationEmailComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,7 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
