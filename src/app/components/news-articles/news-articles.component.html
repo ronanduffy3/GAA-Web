@@ -1,0 +1,14 @@
+<table>
+    <thead>
+      <th>Creator</th>
+      <th>Title</th>
+      <th>Body</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let article of articles">
+          <td>{{article.creator}}</td>
+          <td>{{article.title}}</td>
+          <td>{{article.body}}</td>
+        </tr>
+      </tbody>
+</table>

@@ -1,11 +1,12 @@
-<body>
 <div class="jumbotron jumbo-style">
     <h1 class="display-4" *ngIf="checkIsLoggedIN() && authService.userData as user">Hello, {{user.displayName}}</h1>
-    <p class="lead">Please login to get more detailed information or to make new news.</p>
+    <p class="lead" *ngIf="!checkIsLoggedIN()">Please login to get more detailed information or to make new news.</p>
     <hr class="my-4">
     <p>Click the button before to get the latest news story from the GAA Club.</p>
     <p class="lead">
       <a class="btn btn-primary btn-lg" href="#" role="button">Latest News</a>
     </p>
   </div>
+<body>
+  
 </body>

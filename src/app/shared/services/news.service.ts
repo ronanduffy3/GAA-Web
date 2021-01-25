@@ -12,4 +12,13 @@ export class NewsService {
   CreateArticle(article: Newsarticle){
     return this.fireStore.collection(`news`).add(article);
   }
+
+  getArticles(){
+    return new Promise<any>((resolve, reject) => {
+      this.fireStore.collection(`news`).snapshotChanges()
+      .subscribe(snapshots => {
+        resolve(snapshots);
+      });
+    });
+  }
 }
