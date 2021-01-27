@@ -1,14 +1,7 @@
-<table>
-    <thead>
-      <th>Creator</th>
-      <th>Title</th>
-      <th>Body</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let article of articles">
-          <td>{{article.creator}}</td>
-          <td>{{article.title}}</td>
-          <td>{{article.body}}</td>
-        </tr>
-      </tbody>
-</table>
+<div *ngIf="articles?.length >0">
+  <ul *ngFor="let article of articles" class="collection">
+    <li class="collection-item">{{article.creator}}</li>
+    <li class="collection-item">{{article.title}}</li>
+    <li class="collection-item">{{article.body}}</li>
+  </ul>
+</div>
