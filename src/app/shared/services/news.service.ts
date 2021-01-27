@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 import { Newsarticle } from '../services/newsarticle';
 
 @Injectable({
@@ -7,18 +8,20 @@ import { Newsarticle } from '../services/newsarticle';
 })
 export class NewsService {
 
-  constructor(private fireStore: AngularFirestore) { }
+  newsCollection: AngularFirestoreCollection<Newsarticle>;
+  newsItems: Observable<any[]>;
 
-  CreateArticle(article: Newsarticle){
+  constructor(private fireStore: AngularFirestore) {
+    this.newsItems = this.fireStore.collection('news').valueChanges();
+   }
+
+  CreateArticle(article: Newsarticle) {
     return this.fireStore.collection(`news`).add(article);
   }
 
   getArticles(){
-    return new Promise<any>((resolve, reject) => {
-      this.fireStore.collection(`news`).snapshotChanges()
-      .subscribe(snapshots => {
-        resolve(snapshots);
-      });
-    });
+    return this.newsItems;
   }
+
+
 }
