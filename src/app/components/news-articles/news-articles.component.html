@@ -1,7 +1,15 @@
-<div *ngIf="articles?.length >0">
-  <ul *ngFor="let article of articles" class="collection">
-    <li class="collection-item">{{article.creator}}</li>
-    <li class="collection-item">{{article.title}}</li>
-    <li class="collection-item">{{article.body}}</li>
-  </ul>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let article of articles" class="col-md-3 mx-auto mt-auto">
+      <div class="card" style="width: 25rem; height: 20rem; text-overflow: ellipsis; overflow:auto;">
+        <div class="card-body">
+          <strong><h5 class="card-title">{{article.title}}</h5></strong>
+          <p class="card-text">{{article.body}}</p>
+          <a href="#" class="btn btn-primary">{{article.creator}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+</body>
