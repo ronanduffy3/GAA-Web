@@ -11,6 +11,7 @@ import { HomeComponent } from '../app/components/home/home.component';
 import { SendVerificationEmailComponent } from '../app/components/send-verification-email/send-verification-email.component';
 import { CreateNewsComponent } from './components/create-news/create-news.component';
 import { NewsArticlesComponent } from './components/news-articles/news-articles.component'
+import { TeamListingsComponent } from './components/team-listings/team-listings.component'
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -21,8 +22,8 @@ const routes: Routes = [
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'send-verification-email', component: SendVerificationEmailComponent},
   {path: 'create-news', component: CreateNewsComponent},
-  {path: 'list-news', component: NewsArticlesComponent}
-
+  {path: 'list-news', component: NewsArticlesComponent},
+  {path: 'team-listings', component: TeamListingsComponent}
 ];
 
 @NgModule({

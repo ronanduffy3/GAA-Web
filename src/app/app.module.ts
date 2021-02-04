@@ -18,6 +18,7 @@ import { SendVerificationEmailComponent } from './components/send-verification-e
 import { AuthService } from './shared/services/auth.service';
 import { CreateNewsComponent } from './components/create-news/create-news.component';
 import { NewsArticlesComponent } from './components/news-articles/news-articles.component';
+import { TeamListingsComponent } from './components/team-listings/team-listings.component';
 
 
 const firebaseConfig = {
@@ -44,6 +45,7 @@ const firebaseConfig = {
     SendVerificationEmailComponent,
     CreateNewsComponent,
     NewsArticlesComponent,
+    TeamListingsComponent,
   ],
   imports: [
     BrowserModule,

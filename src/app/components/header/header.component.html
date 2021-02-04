@@ -9,10 +9,7 @@
   
         <li class="nav-item">
           <a class="nav-link" routerLink="/sign-in" *ngIf="!checkIsLoggedIN()">Sign In</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="list-news">News</a>
-        </li> 
+        </li>    
         <li class="nav-item">
           <a class="nav-link" routerLink="/register-user" *ngIf="!checkIsLoggedIN()">Register</a>
         </li> 
@@ -20,11 +17,17 @@
           <a class="nav-link" (click)="authService.SignOut()" *ngIf="checkIsLoggedIN()">Sign Out</a>
         </li> 
         <li class="nav-item">
+          <a class="nav-link" routerLink="list-news">News</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" routerLink="team-listings">News</a>
+        </li> 
+        <li class="nav-item">
           <a class="nav-link" routerLink="/dashboard" *ngIf="checkIsLoggedIN()">Profile</a>
         </li> 
         <li class="nav-item">
           <a class="nav-link" routerLink="/create-news" *ngIf="checkIsLoggedIN()">Create News</a>
-        </li> 
+        </li>        
       </ul>
     </div>
 </nav>

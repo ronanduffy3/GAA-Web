@@ -18,8 +18,9 @@ export class CreateNewsComponent implements OnInit {
 
   newArticle = new FormGroup({
     title: new FormControl('', Validators.required),
-    body: new FormControl('', Validators.required),
+    desc: new FormControl('', Validators.required),
     creator: new FormControl('', Validators.required),
+    imageURL: new FormControl('', Validators.required)
   });
 
   ngOnInit(): void {
@@ -27,7 +28,7 @@ export class CreateNewsComponent implements OnInit {
   }
 
   create(article: Newsarticle) {
-    this.newsService.CreateArticle(article);
+    this.newsService.CreateArticleRT(article);
   }
 
 }

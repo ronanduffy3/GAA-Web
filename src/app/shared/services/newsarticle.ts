@@ -1,7 +1,8 @@
 import { Timestamp } from "rxjs";
 
 export interface Newsarticle {
-    creator: string;
+    desc: string;
     title: string;
-    body: string;
+    imageURL: string;
+    creator: string;
 }

@@ -14,10 +14,11 @@ export class NewsArticlesComponent implements OnInit {
   constructor(public newsService: NewsService) { }
 
   ngOnInit(): void {
-    this.newsService.getArticles().subscribe(articlesList => {
+    this.newsService.getArticles().valueChanges().subscribe(articlesList => {
       console.log(articlesList);
       this.articles = articlesList;
     });
+
   }
 
 }

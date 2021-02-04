@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { Newsarticle } from '../services/newsarticle';
 
@@ -8,19 +9,22 @@ import { Newsarticle } from '../services/newsarticle';
 })
 export class NewsService {
 
-  newsCollection: AngularFirestoreCollection<Newsarticle>;
-  newsItems: Observable<any[]>;
+  newsCollection: AngularFireList<Newsarticle>;
 
-  constructor(private fireStore: AngularFirestore) {
-    this.newsItems = this.fireStore.collection('news').valueChanges();
+  constructor(private fireStore: AngularFirestore, private angularFireDatabase: AngularFireDatabase) {
+    this.newsCollection = this.angularFireDatabase.list(`NewTable`)
    }
 
   CreateArticle(article: Newsarticle) {
     return this.fireStore.collection(`news`).add(article);
   }
 
+  CreateArticleRT(article: Newsarticle){
+    return this.newsCollection.push(article);
+  }
+
   getArticles(){
-    return this.newsItems;
+    return this.newsCollection;
   }
 
 
