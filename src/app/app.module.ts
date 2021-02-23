@@ -19,6 +19,7 @@ import { AuthService } from './shared/services/auth.service';
 import { CreateNewsComponent } from './components/create-news/create-news.component';
 import { NewsArticlesComponent } from './components/news-articles/news-articles.component';
 import { TeamListingsComponent } from './components/team-listings/team-listings.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const firebaseConfig = {
@@ -53,7 +54,8 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

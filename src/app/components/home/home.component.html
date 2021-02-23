@@ -1,46 +1,71 @@
-<div class="jumbotron jumbo-style">
-    <h1 class="display-4" *ngIf="checkIsLoggedIN() && authService.userData as user">Hello, {{user.displayName}}</h1>
-    <p class="lead" *ngIf="!checkIsLoggedIN()">Please login to get more detailed information or to make new news.</p>
-    <hr class="my-4">
-    <p>Click the button before to get the latest news story from the GAA Club.</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Latest News</a>
-    </p>
+<div class="py-5 bg-image-full" style="background-image: url('../../../assets/mainhp.png');">
+  <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
+  <div style="height: 200px;"></div>
 </div>
 
-<div class="container-fluid">
-  <div class="row">
-      <div class="col-sm-3 mx-auto mt-3">
-        <div class="card" style="width: 22rem;">
-          <img class="card-img-top" src="../../../assets/hp1.png" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3 mx-auto mt-3">
-        <div class="card" style="width: 22rem;">
-          <img class="card-img-top" src="../../../assets/hp3.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
+
+<section class="py-5 mt-3 .jumbo">
+  <div class="container">
+    <h1 *ngIf="checkIsLoggedIN() && authService.userData as user">Hello, {{user.displayName}}</h1>
+    <p class="lead"  *ngIf="!checkIsLoggedIN()">Please login to get more detailed information or to make new news.</p>
+    <p>{{todayString | date :'short'}} </p>
+  </div>
+</section>  
+
+<section class="py-5 mt-3 .jumbo">
+  <div class="container">
+    <h1>League Standings</h1>
+    <table class="table-striped w-100">
+      <thead>
+      <tr>
+        <th scop="col"> ID </th>
+        <th scope="col"> Position </th>
+        <th scope="col"> Name </th>
+        <th scope="col"> Played </th>
+        <th scope="col"> Wins </th>
+        <th scope="col"> Draws </th>
+        <th scope="col"> Losses </th>
+        <th scope="col"> Points </th>
+        <th scope="col"> GD </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let Table of pointsList; index as i" >
+        <th scope="row">{{Table.id}}</th>
+        <td>{{Table.pos}}</td>
+        <td>{{Table.name}}</td>
+        <td>{{Table.played}}</td>
+        <td>{{Table.wins}}</td>
+        <td>{{Table.draw}}</td>
+        <td>{{Table.loss}}</td>
+        <td>{{Table.points}}</td>
+        <td>{{Table.gd}}</td>
         
-      </div>
-      <div class="col-sm-3 mx-auto mt-3">
-        <div class="card" style="width: 22rem;">
-          <img class="card-img-top" src="../../../assets/hp2.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
+        
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<div id='myCarousel' class="carousel slide h-25" data-ride="carousel">
+  <div class="carousel-inner h-25">
+    <div class="carousel-item active h-25">
+      <img class="d-block w-100 h-25" src="https://pbs.twimg.com/media/DxmRWtvWsAAaRWV.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100 h-25" src="https://pbs.twimg.com/media/DpF3u-xW0AA6KAa.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100 h-25" src="https://old.itsligo.ie/files/2016/02/Hurlerstrophiesweb27022016.jpg" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100 h-25" src="https://img2.thejournal.ie/inline/1933493/original/?width=630&version=1933493" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100 h-25" src="https://pbs.twimg.com/media/Dy171AiXgAEucA-.jpg" alt="Third slide">
+    </div>
   </div>
 </div>
 

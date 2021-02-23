@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PointsServiceService } from 'src/app/shared/services/points-service.service';
 import { AuthService } from '../../shared/services/auth.service';
+import { Table } from '../../shared/services/table';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +10,26 @@ import { AuthService } from '../../shared/services/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  pointsList: Table[]
+  message: string;
+
+  constructor(public authService: AuthService, public pointsSerice: PointsServiceService) { }
 
   isLoggedIn;
+
+  todayString : Date = new Date();
 
   ngOnInit(): void {
     this.checkIsLoggedIN();
     console.log(this.isLoggedIn);
+
+    this.pointsSerice.getTable().subscribe({
+      next: (value: Table[]) => this.pointsList = value,
+      complete: () => console.log(this.pointsList),
+      error: (message) => this.message = message  
+    });
+
+    
   }
 
   checkIsLoggedIN() {
