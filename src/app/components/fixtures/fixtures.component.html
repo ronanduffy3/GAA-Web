@@ -1,0 +1,21 @@
+<div class='.container-fluid'>
+    <h1>Fixtures</h1>
+    <table class="table-striped w-100">
+      <thead>
+      <tr>
+        <th scop="col">  </th>
+        <th scope="col"> Name </th>
+        <th scope="col"> Date </th>
+        <th scope="col"> Type </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let Fixture of Fixtures;" >
+        <th scope="row"><img src="{{Fixture.img_url}}"></th>
+        <td>{{Fixture.name}</td>
+        <td>{{Fixture.date}}</td>
+        <td>{{Fixture.type}}</td>        
+      </tr>
+      </tbody>
+    </table>
+</div>

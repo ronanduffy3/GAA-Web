@@ -4,15 +4,15 @@
 </div>
 
 
-<section class="py-5 mt-3 .jumbo">
+<section class="mt-3 .jumbo">
   <div class="container">
     <h1 *ngIf="checkIsLoggedIN() && authService.userData as user">Hello, {{user.displayName}}</h1>
     <p class="lead"  *ngIf="!checkIsLoggedIN()">Please login to get more detailed information or to make new news.</p>
-    <p>{{todayString | date :'short'}} </p>
+    <p>{{todayString | date :'full'}} </p>
   </div>
 </section>  
 
-<section class="py-5 mt-3 .jumbo">
+<section class="py-1 .jumbo">
   <div class="container">
     <h1>League Standings</h1>
     <table class="table-striped w-100">

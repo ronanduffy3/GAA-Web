@@ -14,9 +14,9 @@ export class TeamListingsComponent implements OnInit {
   constructor(private ts: TeamServiceService) { }
 
   ngOnInit(): void {
-    this.ts.getArticle().subscribe(teamsList => {
+    this.ts.getPlayers("Senior").subscribe(teamsList => {
       this.teams = teamsList;
-      console.log(this.teams)
+      console.log(this.teams);
     })
   }
 

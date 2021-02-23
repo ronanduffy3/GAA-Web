@@ -13,6 +13,7 @@ import { CreateNewsComponent } from './components/create-news/create-news.compon
 import { NewsArticlesComponent } from './components/news-articles/news-articles.component';
 import { TeamListingsComponent } from './components/team-listings/team-listings.component';
 import { AuthGuard } from './shared/guard/auth.guard';
+import { FixturesComponent } from './components/fixtures/fixtures.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: 'send-verification-email', component: SendVerificationEmailComponent},
   {path: 'create-news', component: CreateNewsComponent, canActivate: [AuthGuard]},
   {path: 'list-news', component: NewsArticlesComponent},
-  {path: 'team-listings', component: TeamListingsComponent}
+  {path: 'team-listings', component: TeamListingsComponent},
+  {path: 'fixtures', component: FixturesComponent}
 ];
 
 @NgModule({
