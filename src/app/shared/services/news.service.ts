@@ -12,7 +12,7 @@ export class NewsService {
   newsCollection: AngularFireList<Newsarticle>;
 
   constructor(private fireStore: AngularFirestore, private angularFireDatabase: AngularFireDatabase) {
-    this.newsCollection = this.angularFireDatabase.list(`NewTable`)
+    this.newsCollection = this.angularFireDatabase.list(`NewTable`);
    }
 
   CreateArticle(article: Newsarticle) {
