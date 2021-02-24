@@ -4,6 +4,7 @@ import firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { IfStmt } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,10 @@ export class AuthService {
       }).catch((error) => {
         window.alert(error.message)
       })
+  }
+
+  getCurrentUser() {
+    return this.afAuth.currentUser;
   }
   // Sign up with email/password
   SignUp(email, password) {
@@ -107,6 +112,13 @@ export class AuthService {
     return userRef.set(userData, {
       merge: true
     });
+  }
+
+  async findUserAdmin(uid: string){
+    console.log(uid, "Apples");
+    let userToCheck = await this.afs.collection(`users`).doc(uid).get();
+    
+    console.log(userToCheck, "Oranges"); 
   }
 
 async UpdateProfile(changedDisplayName: string) {

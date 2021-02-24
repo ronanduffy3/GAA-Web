@@ -18,7 +18,7 @@ body {
   .bg-image-full {
     position: relative;
     top: 0px;
-    background: no-repeat center center fixed;
+    background: no-repeat center center content-box scroll space;
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;

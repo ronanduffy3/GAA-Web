@@ -8,19 +8,19 @@ body {
     margin-top: 120px;
     max-width: 600px;
     height: 320px;
-    color: black;
+    color: white;
   }
 
   ::placeholder{
-    color: black;
+    color: white;
   }
   #login .container #login-row #login-column #login-box #login-form {
     padding: 20px;
-    color: black;
+    color: white;
   }
   #login .container #login-row #login-column #login-box #login-form #register-link {
     margin-top: -85px;
-    color: black;
+    color: white;
   }
 
   .gaa-img{

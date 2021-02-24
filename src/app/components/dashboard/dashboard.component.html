@@ -5,18 +5,17 @@
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
                         <form id="login-form" class="form">
-                            <h3 class="text-center text-info">Profile</h3>
-                            <div class="form-group">
-                                <label for="username" class="text-info">Display Name:</label><br>
-                                <input type="text" name="username" value="{{(user.displayName) ? user.displayName : 'User'}}" id="username" class="form-control" #displayName required>
+                            <div class="gaa-logo" style="margin-bottom: 25px;">
+                                <img src="../../../assets/gaa.png" class="gaa-img">
                             </div>
                             <div class="form-group">
-                                <label for="username" class="text-info">Email:</label><br>
-                                <input type="text" name="username" value="{{user.email}}" id="username" class="form-control" readonly>
+                                <input type="text" name="username" style="background-color: slateblue; color:white;" value="{{(user.displayName) ? user.displayName : 'User'}}" id="username" class="form-control" #displayName required>
                             </div>
                             <div class="form-group">
-                                <label for="password" class="text-info">Unique ID</label><br>
-                                <input type="text" type="text" id="password" class="form-control" value="{{user.uid}}" readonly>
+                                <input type="text" name="username" style="background-color: slateblue; color:white;" value="{{user.email}}" id="username" class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" type="text" style="background-color: slateblue; color:white;" id="password" class="form-control" value="{{user.uid}}" readonly>
                             </div>
                             
                             <div class="form-group">

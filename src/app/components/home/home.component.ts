@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PointsServiceService } from 'src/app/shared/services/points-service.service';
 import { AuthService } from '../../shared/services/auth.service';
 import { Table } from '../../shared/services/table';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
   pointsList: Table[]
   message: string;
 
-  constructor(public authService: AuthService, public pointsSerice: PointsServiceService) { }
+  constructor(public authService: AuthService, public pointsSerice: PointsServiceService, public afAuth: AngularFireAuth) { }
 
   isLoggedIn;
 
@@ -21,7 +22,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkIsLoggedIN();
-    console.log(this.isLoggedIn);
+
+    let activeUser = JSON.parse(localStorage.getItem(`user`))
+    this.authService.findUserAdmin(activeUser.uid);
 
     this.pointsSerice.getTable().subscribe({
       next: (value: Table[]) => this.pointsList = value,

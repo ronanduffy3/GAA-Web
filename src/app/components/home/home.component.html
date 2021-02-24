@@ -1,12 +1,12 @@
-<div class="py-5 bg-image-full" style="background-image: url('../../../assets/mainhp.png');">
+<div class="py-5 bg-image-full" style="background-image: url('../../../assets/mainhp_1.png');">
   <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
-  <div style="height: 200px;"></div>
+  <div style="height: 275px;"></div>
 </div>
 
 
 <section class="mt-3 .jumbo">
   <div class="container">
-    <h1 *ngIf="checkIsLoggedIN() && authService.userData as user">Hello, {{user.displayName}}</h1>
+    <h1 *ngIf="checkIsLoggedIN() && authService.userData as user">Hello, {{user.displayName}}, {{user.isTeacher}}</h1>
     <p class="lead"  *ngIf="!checkIsLoggedIN()">Please login to get more detailed information or to make new news.</p>
     <p>{{todayString | date :'full'}} </p>
   </div>
