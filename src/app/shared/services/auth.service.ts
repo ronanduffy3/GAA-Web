@@ -1,7 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
 import { User } from '../services/user';
-import firebase from 'firebase/app';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { IfStmt } from '@angular/compiler';
@@ -46,6 +45,8 @@ export class AuthService {
   getCurrentUser() {
     return this.afAuth.currentUser;
   }
+
+
   // Sign up with email/password
   SignUp(email, password) {
     return this.afAuth.createUserWithEmailAndPassword(email, password)
@@ -115,7 +116,6 @@ export class AuthService {
   }
 
   async findUserAdmin(uid: string){
-    console.log(uid, "Apples");
     let userToCheck = await this.afs.collection(`users`).doc(uid).get();
     
     console.log(userToCheck, "Oranges"); 

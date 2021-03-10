@@ -3,6 +3,7 @@ import { PointsServiceService } from 'src/app/shared/services/points-service.ser
 import { AuthService } from '../../shared/services/auth.service';
 import { Table } from '../../shared/services/table';
 import { AngularFireAuth } from '@angular/fire/auth';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-home',

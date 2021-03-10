@@ -21,6 +21,7 @@ import { NewsArticlesComponent } from './components/news-articles/news-articles.
 import { TeamListingsComponent } from './components/team-listings/team-listings.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FixturesComponent } from './components/fixtures/fixtures.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 
 const firebaseConfig = {
@@ -49,6 +50,7 @@ const firebaseConfig = {
     NewsArticlesComponent,
     TeamListingsComponent,
     FixturesComponent,
+    GalleryComponent,
   ],
   imports: [
     BrowserModule,

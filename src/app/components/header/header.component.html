@@ -20,14 +20,18 @@
           <a class="nav-link" routerLink="list-news">News</a>
         </li> 
         <li class="nav-item">
+          <a class="nav-link" routerLink="gallery">Gallery</a>
+        </li> 
+        <li class="nav-item">
           <a class="nav-link" routerLink="/fixtures">Fixtures</a>
         </li>  
         <li class="nav-item">
-          <a class="nav-link" routerLink="/dashboard" *ngIf="checkIsLoggedIN()">Profile</a>
+          <a class="nav-link" routerLink="/create-news" *ngIf="checkIsLoggedIN()">Create News</a>
         </li> 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/create-news" *ngIf="checkIsLoggedIN()">Create News</a>
-        </li>        
+          <a class="nav-link" routerLink="/dashboard" *ngIf="checkIsLoggedIN()">Profile</a>
+        </li> 
+               
       </ul>
     </div>
 </nav>
