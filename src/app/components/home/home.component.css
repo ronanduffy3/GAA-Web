@@ -8,3 +8,7 @@ body {
 .jumbotron{
   padding-top: 100px;
 }
+
+#interactiveMenuList{
+  list-style: none;
+}
