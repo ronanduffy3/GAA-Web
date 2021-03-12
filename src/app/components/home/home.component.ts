@@ -26,9 +26,15 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.checkIsLoggedIN();
 
+<<<<<<< Updated upstream
     this.user = JSON.parse(localStorage.getItem(`user`))
     this.authService.findUserAdmin(this.user.uid);
   
+=======
+    let activeUser = JSON.parse(localStorage.getItem(`user`))
+    this.authService.findUserAdmin(activeUser.uid);
+    this.authService.IsTeacher();
+>>>>>>> Stashed changes
 
     this.pointsSerice.getTable().subscribe({
       next: (value: Table[]) => this.pointsList = value,
